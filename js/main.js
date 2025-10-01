@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const preloader = document.getElementById('preloader');
   if (!preloader) return; // Safety check
 
-  let timeoutFired = false;
+  // 仅保留 10 秒后强制隐藏 PreLoader
 
   // Function to hide the preloader
   const hidePreloader = () => {
@@ -18,20 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 500); // Must match CSS transition duration
   };
 
-  // Set a timeout to hide the preloader after 10 seconds
-  const timeout = setTimeout(() => {
-      timeoutFired = true;
-      hidePreloader();
+  // 10秒后强制隐藏 PreLoader
+  setTimeout(() => {
+    hidePreloader();
   }, 10000);
-
-  // When the page is fully loaded, hide the preloader
-  window.onload = () => {
-      // If the timeout hasn't already fired, clear it and hide the preloader
-      if (!timeoutFired) {
-          clearTimeout(timeout);
-          hidePreloader();
-      }
-  };
 });
 // --- End Preloader Logic ---
 
