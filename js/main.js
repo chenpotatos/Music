@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 });
 // --- End Preloader Logic ---
+
 var local = false;
 var isScrolling = false; // 添加全局变量 isScrolling，默认为 false
 var scrollTimer = null; // 添加定时器变量
