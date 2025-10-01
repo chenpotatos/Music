@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 10秒后强制隐藏 PreLoader
   setTimeout(() => {
     hidePreloader();
-  }, 10000);
+  }, 6000);
 });
 // --- End Preloader Logic ---
 
