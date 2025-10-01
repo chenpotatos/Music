@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to hide the preloader
   const hidePreloader = () => {
-      // If already hidden, do nothing
-      if (preloader.classList.contains('fade-out')) {
-          return;
-      }
-      
-      preloader.classList.add('fade-out');
-      setTimeout(() => {
-          preloader.style.display = 'none';
-      }, 500); // Must match CSS transition duration
+    // If already hidden, do nothing
+    if (preloader.classList.contains('fade-out')) {
+      return;
+    }
+    console.log('hidePreloader called');
+    preloader.classList.add('fade-out');
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 500); // Must match CSS transition duration
   };
 
   // 10秒后强制隐藏 PreLoader
