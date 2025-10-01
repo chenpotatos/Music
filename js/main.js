@@ -3,6 +3,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const preloader = document.getElementById('preloader');
   if (!preloader) return; // Safety check
 
+  // 随机 tips 列表
+  const tipsList = [
+    '音乐是心灵的语言',
+    '用旋律点亮每一天',
+    '好音乐值得等待',
+    '加载中，请稍候...',
+    '享受片刻的安静',
+    '发现属于你的旋律',
+    '音乐让世界更美好',
+    '每一次刷新都是新的期待',
+    'HeoMusic，陪你每一刻',
+    '音符跳动，心情飞扬'
+  ];
+  const tips = tipsList[Math.floor(Math.random() * tipsList.length)];
+  const tipsDiv = document.getElementById('preloader-tips');
+  if (tipsDiv) {
+    tipsDiv.textContent = tips;
+    tipsDiv.style.position = 'absolute';
+    tipsDiv.style.left = '50%';
+    tipsDiv.style.bottom = '32px';
+    tipsDiv.style.transform = 'translateX(-50%)';
+    tipsDiv.style.color = '#bbb';
+    tipsDiv.style.fontSize = '1.1rem';
+    tipsDiv.style.textAlign = 'center';
+    tipsDiv.style.opacity = '0.85';
+    tipsDiv.style.background = 'none';
+    tipsDiv.style.border = 'none';
+    tipsDiv.style.pointerEvents = 'none';
+  }
+
   // 仅保留 10 秒后强制隐藏 PreLoader
 
   // Function to hide the preloader
@@ -21,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 10秒后强制隐藏 PreLoader
   setTimeout(() => {
     hidePreloader();
-  }, 6000);
+  }, 10000);
 });
 // --- End Preloader Logic ---
 
